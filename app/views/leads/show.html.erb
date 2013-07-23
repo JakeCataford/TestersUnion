@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lead.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lead.email %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @lead.age %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @lead.sex %>
+</p>
+
+<p>
+  <strong>Unsubscribe:</strong>
+  <%= @lead.unsubscribe %>
+</p>
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>

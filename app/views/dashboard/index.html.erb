@@ -1,0 +1,6 @@
+<h3 class="span12 text-center"> 
+	<span class="highlight-text"><%= @leads.count('email', :distinct => true) %></span> 
+	new leads this week, indicating a 
+	<span class="highlight-text"><%= @leads.count('email', :distinct => true) %>%</span>
+	growth.
+</h3>
