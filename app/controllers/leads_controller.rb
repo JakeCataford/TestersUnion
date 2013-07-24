@@ -5,6 +5,7 @@ class LeadsController < ApplicationController
   # GET /leads.json
   def index
     @leads = Lead.all
+    @tokens = Token.all
   end
 
   # GET /leads/1

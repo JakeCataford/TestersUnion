@@ -8,6 +8,7 @@
       <th>Age</th>
       <th>Sex</th>
       <th>Unsubscribe</th>
+      <th>Token</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= lead.age %></td>
         <td><%= lead.sex %></td>
         <td><%= lead.unsubscribe %></td>
+        <td><%= @tokens.find_by_lead_id(lead.id).value %></td>
         <td><%= link_to 'View', lead, class: "btn btn-info" %>
             <%= link_to 'Edit', edit_lead_path(lead), class: "btn btn-warning" %>
             <%= link_to 'Delete', lead, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
