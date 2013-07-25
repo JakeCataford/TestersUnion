@@ -1,7 +1,10 @@
 TestersUnion::Application.routes.draw do
   
 
+  root to: "signup#index"
   resources :leads
+
+  post '/signup/create', to: 'signup#create'
 
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/generate-tokens', to: 'dashboard#generate_new_tokens' 

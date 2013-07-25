@@ -28,7 +28,6 @@ body { padding-top: 65px;}
 html, body, main, .container {
 	background-color: #454545;
 	height: 100%;
-	margin-bottom: 65px;
 }
 
 .brand:hover {
@@ -53,6 +52,7 @@ html, body, main, .container {
 .container {
 	background: #ebebeb;
 	padding: 20px;
+	width: 1260px
 }
 
 .highlight-text {

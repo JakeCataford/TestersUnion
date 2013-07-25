@@ -12,4 +12,11 @@ class Token < ActiveRecord::Base
 		end 
 	end
 
+	def self.generate_token_for_lead(lead)
+		t = Token.create
+		t.lead = lead
+		t.value = Digest::MD5.hexdigest(DateTime.current.strftime("%Y-%m-%d %H:%M:%S %z") + lead.email + lead.unsubscribe);
+		t.save!
+	end
+
 end
