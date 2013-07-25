@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
-
+  include GoogleAuth::Controller
+  
   def index
   	@leads = Lead.all;
   end

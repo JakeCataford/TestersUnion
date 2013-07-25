@@ -1,6 +1,7 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
 
+  include GoogleAuth::Controller
   # GET /leads
   # GET /leads.json
   def index

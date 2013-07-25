@@ -10,7 +10,10 @@ end
 
 group :development, :test do
   gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
+  gem "letter_opener"
 end
+
+
 
 gem 'google_auth', :git => "git://github.com/JakeCataford/google_auth"
 gem 'ruby-openid', :git => "git://github.com/kendagriff/ruby-openid.git", :ref => '79beaa41'
