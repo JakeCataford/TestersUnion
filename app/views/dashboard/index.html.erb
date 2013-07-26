@@ -1,6 +1,80 @@
 <h3 class="span12 text-center"> 
 	<span class="highlight-text"><%= @leads.count('email', :distinct => true) %></span> 
 	new leads this week, indicating a 
-	<span class="highlight-text"><%= @leads.count('email', :distinct => true) %>%</span>
-	growth.
-</h3>
+	<span class="highlight-text"><%= @percentGrowth %>%</span> growth this month.</h3>
+	
+  <hr/>
+  <div class="row">
+
+    <div class="span4">
+      <br/>
+      <h4>New Leads This Month:</h4>
+      <table class="table table-hover">
+        <tbody>
+          <% @leads.each do |lead| %>
+          <tr>
+            <td><%= lead.name %></td>
+            <td><%= lead.email %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="span3">
+      <br/>
+      <h4>Quick Facts:</h4>
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td>Total Leads:</td>
+            <td><%= @leads.count %></td>
+          </tr>
+          <tr>
+            <td>Average Lead Age:</td>
+            <td><%= @averageAge %></td>
+          </tr>
+          <tr>
+            <td>Men:</td>
+            <td><%= @leads.where(:sex => 'Male').count %></td>
+          </tr>
+          <tr>
+            <td>Women:</td>
+            <td><%= @leads.where(:sex => 'Female').count %></td>
+          </tr>
+          <tr>
+            <td>Other:</td>
+            <td><%= @leads.where(:sex => 'Undisclosed/Other').count %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="span4">
+      <br/>
+      <h4>Running Releases:</h4>
+      <form action="releases/create" method="post" id="release">
+        <table class="table table-hover">
+          <tbody>
+            <% @releases.each do |release| %>
+              <tr>
+                <td><%= release.title %></td>
+                <td><%= release.url %></td>
+              </tr>
+            <% end %>
+            <tr>
+              <td><input name="release[title]" type="text" class="span2" placeholder="Title" required></td>
+              <td><input name="release[url]" type="text"  class="span2" placeholder="URL" required></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><button type="submit" class="submitter-dash btn btn-success">Create</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+
+
+  </div>
+

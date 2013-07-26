@@ -1,6 +1,9 @@
 TestersUnion::Application.routes.draw do
   
 
+  post "/releases/create", to: 'releases#create'
+
+
   root to: "signup#index"
   resources :leads
 
