@@ -13,7 +13,7 @@
 
   <div class="pull-right" id="login">
     <em class="pull-left"><%= User.find(session[:user_id]).name %></em>
-    <img src="<%= User.find(session[:user_id]).gravatar_url(50) %>" class="img-circle pull-right"/>
+    <img src="<%= User.find(session[:user_id]).gravatar_url(50) %>" class="img-rounded pull-right"/>
   </div>
 
 <% end %>

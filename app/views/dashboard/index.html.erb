@@ -42,10 +42,6 @@
             <td>Women:</td>
             <td><%= @leads.where(:sex => 'Female').count %></td>
           </tr>
-          <tr>
-            <td>Other:</td>
-            <td><%= @leads.where(:sex => 'Undisclosed/Other').count %></td>
-          </tr>
         </tbody>
       </table>
     </div>

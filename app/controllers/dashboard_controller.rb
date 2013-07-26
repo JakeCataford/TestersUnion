@@ -7,7 +7,7 @@ class DashboardController < ApplicationController
     @tokens = Token.all
     @averageAge = @leads.collect(&:age).sum.to_f/@leads.length if @leads.length > 0
     @recentleads = Lead.all(:conditions => ["created_at >= ?", Time.zone.now.beginning_of_month])
-    @percentGrowth = (@leads.count/@recentleads.count) * 100
+    @percentGrowth = (@leads.count/@recentleads.count) * 100 if @recentleads.length > 0
   end
 
   def generate_new_tokens
